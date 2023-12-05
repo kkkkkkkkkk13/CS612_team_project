@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Boba Tea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customize Your Boba Tea</h1>
+        <nav>
+            <ul class="left-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <ul class="right-nav">                    
+                <li class="cart-link">
+                     <a href="cart.html">Cart</a>
+                    <span id="cart-item-count">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="selected-tea"></div>
+        <div id="selected-tea-image" class="selected-tea-image-container"></div>
+        <section id="customization-form">
+            <form>
+                <label for="size">Size:</label>
+                <select id="size" name="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+                
+                <label for="sugar">Sugar Level:</label>
+                <select id="sugar" name="sugar">
+                    <option value="0">0%</option>
+                    <option value="25">25%</option>
+                    <option value="50">50%</option>
+                    <option value="75">75%</option>
+                    <option value="100">100%</option>
+                </select>
+                
+                <label for="ice">Ice Level:</label>
+                <select id="ice" name="ice">
+                    <option value="none">No Ice</option>
+                    <option value="hot">Hot</option>
+                    <option value="less">Less Ice</option>
+                    <option value="regular">Regular Ice</option>
+                    <option value="extra">Extra Ice</option>
+                </select>
+                
+                <h3>Toppings:</h3>
+                <div class="toppings">
+                    <input type="checkbox" id="ai-yu" name="toppings" value="Ai-Yu">
+                    <label for="ai-yu">Ai-Yu</label>
+                
+                    <input type="checkbox" id="coconut-jelly" name="toppings" value="Coconut Jelly">
+                    <label for="coconut-jelly">Coconut Jelly</label>
+                
+                    <input type="checkbox" id="milk-foam" name="toppings" value="Milk Foam">
+                    <label for="milk-foam">Milk Foam</label>
+                
+                    <input type="checkbox" id="pearls" name="toppings" value="Pearls">
+                    <label for="pearls">Pearls</label>
+                
+                    <input type="checkbox" id="pudding" name="toppings" value="Pudding">
+                    <label for="pudding">Pudding</label>
+                
+                    <input type="checkbox" id="boba" name="toppings" value="Boba">
+                    <label for="boba">Boba</label>
+                
+                    <input type="checkbox" id="crystal-boba" name="toppings" value="Crystal Boba">
+                    <label for="crystal-boba">Crystal Boba</label>
+                </div>
+                
+
+                <div class="button-container">
+                    <button type="button" onclick="handleAddToCart()" class="button">Add to Cart</button>
+                </div>
+                
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Boba Tea Shop</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

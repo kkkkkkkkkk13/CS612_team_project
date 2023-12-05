@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Boba Tea Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <ul class="left-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <ul class="right-nav">                    
+                <li class="cart-link">
+                     <a href="cart.html">Cart</a>
+                    <span id="cart-item-count">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cart-items">
+            <!-- Cart items will be dynamically loaded here -->
+        </section>        
+        <div class="cart-total">
+            <p>Total: $<span id="total-amount">0.00</span></p>
+            <button onclick="location.href='payment.html'" class="button">Proceed to Checkout</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Boba Tea Shop</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

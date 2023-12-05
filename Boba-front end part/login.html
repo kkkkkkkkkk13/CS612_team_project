@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Boba Tea Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Boba Tea Shop</h1>
+        <nav>
+            <ul class="left-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <ul class="right-nav">                    
+                <li class="cart-link">
+                     <a href="cart.html">Cart</a>
+                    <span id="cart-item-count">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        <form class="login-form" action="login_process.php" method="POST">
+            <h2>Customer Login</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="button login-button">Login</button>
+        </form>
+    </div>
+    <div class="guest-container">
+        <a href="guest_checkout.html" class="button guest-button">Continue as Guest</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
