@@ -81,7 +81,59 @@ Instructions for setting up the project locally, including database configuratio
    ```
    Replace `table_name` with the name of the tables to view their data.
 ### **2. Front End Configuration**
-1. 
+1. **Install http-server (if not already installed)**:
+   
+   If you haven't already installed `http-server`, you can do so by running the following command:
+
+   ```bash
+   sudo npm install -g http-server
+   ```
+
+   Example:
+
+   ```bash
+   (base) ryuu@Krits-MP ~ % sudo npm install -g http-server
+   ```
+
+2. **Navigate to the Project Directory**:
+
+   Use the `cd` command to navigate to the front-end directory of your project. Replace `path/to/your/project` with the actual path to your project's front-end directory:
+
+   ```bash
+   cd path/to/your/project
+   ```
+
+   Example:
+
+   ```bash
+   (base) ryuu@Krits-MP ~ % cd /Users/ryuu/Downloads/CS612_team_project-main
+   ```
+
+3. **Start http-server**:
+
+   Run the following command to start the `http-server` in the front-end directory:
+
+   ```bash
+   http-server
+   ```
+
+   Example:
+
+   ```bash
+   (base) ryuu@Krits-MP CS612_team_project-main % http-server
+   ```
+
+4. **Access the Website**:
+
+   After starting the `http-server`, you can access the front-end of the website by opening your web browser and navigating to the following address:
+
+   ```
+   http://localhost:8080
+   ```
+
+5. **Go to Boba-front end part**:
+
+   Click on the "Boba-front end part" link or button to access the front-end of the website weve created.
 ### **3. Back End Configuration**
 
 ## **Presentation**
