@@ -141,7 +141,7 @@ Instructions for setting up the project locally, including database configuratio
 ## **Presentation**
 Showcase the system's features, perform a live demo, and explain the integration of frontend, backend, and database.
 - [Project Code](https://github.com/lialazyoaf/CS612_team_project)
-- [Demo Video]()
+- [Demo Video](https://github.com/lialazyoaf/CS612_team_project/blob/main/WhatsApp%20Video%202023-12-09%20at%2012.09.19%20AM.mp4)
 - [Slides]()
 ## **Due Date**
 - Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 9**
