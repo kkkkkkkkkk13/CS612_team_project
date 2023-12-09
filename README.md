@@ -144,5 +144,5 @@ Showcase the system's features, perform a live demo, and explain the integration
 - [Demo Video](https://github.com/lialazyoaf/CS612_team_project/blob/main/WhatsApp%20Video%202023-12-09%20at%2012.09.19%20AM.mp4)
 - [Slides]()
 ## **Due Date**
-- Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 9**
+- Website Codes & Databases, Documentation Due: **11:59pm ET Saturday, December 9**
 - Peer Review Due: **9:00am ET Saturday, December 16**
