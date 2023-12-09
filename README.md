@@ -50,6 +50,6 @@ Instructions for setting up the project locally, including database configuratio
 Showcase the system's features, perform a live demo, and explain the integration of frontend, backend, and database.
 
 ## **Due Date**
-- Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 8**
+- Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 9**
 
 - Peer Review Due: **9:00am ET Saturday, December 16**
