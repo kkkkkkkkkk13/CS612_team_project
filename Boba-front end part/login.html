@@ -7,39 +7,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Boba Tea Shop</h1>
-        <nav>
-            <ul class="left-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-            <ul class="right-nav">                    
-                <li class="cart-link">
-                     <a href="cart.html">Cart</a>
-                    <span id="cart-item-count">0</span>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="login-container">
-        <form class="login-form" action="login_process.php" method="POST">
-            <h2>Customer Login</h2>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="button login-button">Login</button>
-        </form>
-    </div>
-    <div class="guest-container">
-        <a href="guest_checkout.html" class="button guest-button">Continue as Guest</a>
-    </div>
-    <script src="script.js"></script>
+<!-- Header and Navigation (Unchanged) -->
+
+<div class="login-container">
+    <!-- Login Form -->
+    <form class="login-form" id="loginForm">
+        <h2>Customer Login</h2>
+        <!-- Email Input Field -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <!-- Password Input Field -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="button login-button">Login</button>
+    </form>
+</div>
+
+<!-- Guest Checkout Link (Unchanged) -->
+
+<script>
+    // Adding an event listener for form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Retrieving user inputs
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        // Creating an AJAX request
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/login', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // On successful login, redirect to index.html
+                // Store email in localStorage
+                localStorage.setItem('userEmail', email);
+
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            }
+        };
+        // Sending the request with user data
+        xhr.send(JSON.stringify({ Email: email, password: password }));
+    });
+</script>
 </body>
 </html>
+

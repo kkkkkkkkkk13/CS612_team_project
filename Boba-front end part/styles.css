@@ -387,4 +387,61 @@ nav ul li {
     width: 100%;
 }
 
+#order-history-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #4CAF50;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.order-history-link:hover {
+    background-color: #45a049;
+}
+#order-history-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#order-history-content th, #order-history-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#order-history-content tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#order-history-content th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#order-history-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#order-history-table th, #order-history-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#order-history-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#order-history-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 /* Additional styling as needed */

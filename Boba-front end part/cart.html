@@ -31,12 +31,57 @@
         </section>        
         <div class="cart-total">
             <p>Total: $<span id="total-amount">0.00</span></p>
-            <button onclick="location.href='payment.html'" class="button">Proceed to Checkout</button>
+            <button id="submit-order" class="button">Submit Order</button>
         </div>
     </main>
     <footer>
         <p>&copy; 2023 Boba Tea Shop</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+<script>
+    document.getElementById('submit-order').addEventListener('click', function() {
+        // Collecting cart data
+        const cartItems  = JSON.parse(localStorage.getItem('cart')) || []; // Function to collect items in the cart
+        let totalPrice = 0;
+        cartItems.forEach((item, index) => {
+            let price = teaPricing[item.name][item.size];
+            price += (item.toppings.split(', ').length * 0.5);
+            totalPrice += price;
+        });
+        // Creating an order object
+        const order = {
+            items: cartItems, // Array of items in the cart
+            total: totalPrice, // Function to calculate the total amount of the cart
+            email: localStorage.getItem('userEmail'), // Email of the user
+            storeId: 1
+        };
+
+        // Sending the order to the backend
+        fetch('http://localhost:3000/submit-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(order)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Order submitted:', data);
+
+                // Clear the cart from localStorage
+                localStorage.setItem('cart', JSON.stringify([]));
+
+                // Store the total price in localStorage for use on the payment page
+                localStorage.setItem('totalPrice', totalPrice);
+
+                // Redirect to the payment page
+                window.location.href = 'payment.html';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    });
+</script>
 </body>
 </html>
+

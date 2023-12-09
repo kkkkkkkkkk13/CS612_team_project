@@ -81,11 +81,13 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 function addToCart(item) {
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
 }
 
 function handleAddToCart() {
     const teaName = getQueryParam('tea'); // Get the tea name from URL parameter
     const size = document.getElementById('size').value;
+    const temperature = document.getElementById('ice').value;
     const sugarLevel = document.getElementById('sugar').value;
     
     // Fetch selected toppings
@@ -95,6 +97,7 @@ function handleAddToCart() {
         name: teaName, // Use the tea name from the URL parameter
         size: size,
         sugarLevel: sugarLevel,
+        temperature: temperature,
         toppings: toppings.join(', ') // Join toppings as a string
     };
 
@@ -103,6 +106,7 @@ function handleAddToCart() {
     alert(`You added ${item.name} to the cart!`);
 
 }
+// Adding an event listener to the 'Submit Order' button
 
 function updateCartDisplay() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -116,7 +120,7 @@ function updateCartDisplay() {
         itemElement.classList.add('cart-item');
         
         const itemDetails = document.createElement('span');
-        itemDetails.textContent = `${item.name}, Size: ${item.size}, Sugar: ${item.sugarLevel}, Toppings: ${item.toppings} - $${calculateItemPrice(item).toFixed(2)}`;
+        itemDetails.textContent = `${item.name}, Size: ${item.size}, Ice: ${item.temperature}, Sugar: ${item.sugarLevel}, Toppings: ${item.toppings} - $${calculateItemPrice(item).toFixed(2)}`;
         
         const deleteButton = document.createElement('button');
         deleteButton.innerHTML = '&times;'; // '×' symbol, or you could use an icon
@@ -126,7 +130,6 @@ function updateCartDisplay() {
         itemElement.appendChild(itemDetails);
         itemElement.appendChild(deleteButton);
         cartItemsContainer.appendChild(itemElement);
-
         totalPrice += calculateItemPrice(item);
     });
 
@@ -136,6 +139,7 @@ function updateCartDisplay() {
 function removeItemFromCart(index) {
     cart.splice(index, 1); // Remove the item from the cart
     localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+    updateCartCount();
     updateCartDisplay(); // Refresh the cart display
 }
 
@@ -153,10 +157,7 @@ if (window.location.pathname.endsWith('cart.html')) {
 
 function handlePaymentSubmit(event) {
     event.preventDefault();
-    // Validate payment details and process payment
-    // For demo purposes, we'll just show an alert
-    alert('Payment processed! Your order is confirmed.');
-    
+
     // Clear the cart
     localStorage.removeItem('cart');
     cart = [];
@@ -175,7 +176,9 @@ function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const itemCount = cart.length; // Assuming cart is an array of items
     const itemCountElement = document.getElementById('cart-item-count');
-    itemCountElement.textContent = itemCount;
+    if (itemCountElement && itemCount > 0) {
+        itemCountElement.textContent = itemCount;
+    }
 }
 function validateCardNumber(input) {
     // Allow only digits, and limit length to 16
@@ -191,4 +194,44 @@ function formatExpiryDate(input) {
         input.value = input.value.slice(0, 2) + '/' + input.value.slice(2);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Retrieve the user email from localStorage
+    const userEmail = localStorage.getItem('userEmail');
+
+    // Select the login link element
+    const loginLink = document.querySelector('nav .left-nav a[href="login.html"]');
+
+    if (userEmail && loginLink) {
+        // Update the login link text to show the user's email
+        loginLink.textContent = userEmail;
+
+        // Create a logout button
+        const logoutButton = document.createElement('button');
+        logoutButton.textContent = 'Log Out';
+
+        // Styling the logout button for a better appearance
+        logoutButton.style.backgroundColor = '#f44336'; // Red background color for the button
+        logoutButton.style.color = 'white'; // White text color
+        logoutButton.style.border = 'none'; // No border for a cleaner look
+        logoutButton.style.padding = '10px 20px'; // Padding for size and comfort
+        logoutButton.style.marginLeft = '10px'; // Margin on the left for spacing
+        logoutButton.style.borderRadius = '5px'; // Rounded corners for a smoother look
+        logoutButton.style.cursor = 'pointer'; // Cursor changes to a hand when hovering
+        logoutButton.style.fontSize = '1em'; // Font size for readability
+
+        // Setting the action for the logout button
+        logoutButton.onclick = function() {
+            // Clear the user email from localStorage
+            localStorage.removeItem('userEmail');
+
+            // Reload the page to reflect the logout status
+            window.location.reload();
+        };
+
+        // Insert the logout button next to the login link
+        loginLink.parentNode.insertBefore(logoutButton, loginLink.nextSibling);
+    }
+});
+
 

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Tea Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to the Boba Tea Shop</h1>
+    <nav>
+        <ul class="left-nav">
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <a href="order_history.html" id="order-history-link" style="display: none;">Order History</a>
+        </ul>
+        <ul class="right-nav">
+            <li class="cart-link">
+                <a href="cart.html">Cart</a>
+                <span id="cart-item-count">0</span>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Your Order History</h2>
+    <div id="order-history-table">
+        <table>
+            <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Order Date</th>
+                <th>Order Price</th>
+                <th>Store Name</th>
+                <th>Order Details</th>
+            </tr>
+            </thead>
+            <tbody id="order-history-body">
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2023 Boba Tea Shop</p>
+</footer>
+<script src="js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const userEmail = localStorage.getItem('userEmail');
+
+        fetch('http://localhost:3000/order-history/'+ userEmail)
+            .then(response => response.json())
+            .then(orders => {
+                const tbody = document.getElementById('order-history-body');
+                orders.forEach(order => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                <td>${order.transaction_id}</td>
+                <td>${new Date(order.order_date).toLocaleDateString()}</td>
+                <td>$${order.order_price}</td>
+                <td>${order.store_name}</td>
+                <td>${formatOrderSum(order.order_sum)}</td>`;
+                    tbody.appendChild(tr);
+                });
+            });
+    });
+
+    function formatOrderSum(orderSum) {
+        const items = JSON.parse(orderSum);
+        return items.map(item => `${item.name}, Size: ${item.size}, Sugar: ${item.sugarLevel}, Toppings: ${item.toppings}`).join('<br>');
+    }
+</script>
+</script>
+</body>
+</html>

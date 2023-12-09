@@ -15,6 +15,7 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="login.html">Login</a></li>
+                <a href="order_history.html" id="order-history-link" style="display: none;">Order History</a>
             </ul>
             <ul class="right-nav">                    
                 <li class="cart-link">
@@ -37,6 +38,14 @@
     <footer>
         <p>&copy; 2023 Boba Tea Shop</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const userEmail = localStorage.getItem('userEmail');
+        if (userEmail) {
+            document.getElementById('order-history-link').style.display = 'inline';
+        }
+    });
+</script>
 </body>
 </html>
