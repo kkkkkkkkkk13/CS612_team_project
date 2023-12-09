@@ -14,7 +14,7 @@ This project aims to develop a web-based system that enables users to order Boba
 ## **Functionalities**
 
 ### **Customers**
-- **User Registration and Authentication:** Secure account creation and login.
+- **User Registration and Authentication:** Secure account login.
 - **Menu Display:** Various flavors, toppings, and sizes of Boba Tea.
 - **Customization:** Personalize orders with choices of flavor, sweetness, ice level, and toppings.
 - **Shopping Cart:** Add multiple items.
@@ -29,11 +29,11 @@ This project aims to develop a web-based system that enables users to order Boba
 
 ### **Frontend**
 - **Languages:** HTML, CSS, JavaScript
-- **Frameworks:** React or Vue.js
+- **Frameworks:** Ajax
 
 ### **Backend**
 - **Environment:** Node.js
-- **Framework:** Express
+- **Framework:** Express express mysql2 body-parser cors jsonwebtoken bcrypt dotenv
 - **API:** SOAP or REST
 - **Database:** MySQL
 
