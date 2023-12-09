@@ -138,6 +138,74 @@ Instructions for setting up the project locally, including database configuratio
    
 ### **3. Back End Configuration**
 
+1. **Navigate to the Back End Directory**:
+
+   Open your terminal or command prompt and use the `cd` command to change to the directory where your back-end project files are located:
+
+   ```bash
+   cd path_to_back_end_directory
+   ```
+
+   Example command:
+
+   ```bash
+   (base) ryuu@Krits-MP ~ % cd /Users/ryuu/Downloads/CS612_team_project-main/backend
+   ```
+
+   Replace `path_to_back_end_directory` with the actual path to your back-end directory.
+
+2. **Install Dependencies**:
+
+   Install the required Node.js packages using npm with administrative privileges.
+
+   ```bash
+   sudo npm install express mysql2 body-parser cors jsonwebtoken bcrypt dotenv
+   ```
+
+   Example:
+
+   ```bash
+   (base) ryuu@Krits-MP backend % sudo npm install express mysql2 body-parser cors jsonwebtoken bcrypt dotenv
+   ```
+
+3. **Configure the Database**:
+
+   Set up your MySQL database connection using the provided configuration details.
+
+   ```javascript
+   const db = mysql.createConnection({
+     host: '156.127.99.100', // Replace with your database server address
+     user: 'test', // Replace with your database username
+     password: 'abc123', // Replace with your database password
+     database: 'BOBA' // Replace with your database name
+   });
+   ```
+4. **Start the Server**:
+
+   Launch your backend server with the following commands:
+
+   ```bash
+   npm install // Only if you haven't already installed the dependencies
+   npm start // To run the server
+   ```
+
+   Example:
+
+   ```bash
+   (base) ryuu@Krits-MP backend % npm install
+   (base) ryuu@Krits-MP backend % npm start
+   ```
+
+5. **Verify the Server**:
+
+   Confirm that the backend server is running by accessing it through:
+
+   ```
+   http://localhost:3000
+   ```
+
+
+
 ## **Presentation**
 Showcase the system's features, perform a live demo, and explain the integration of frontend, backend, and database.
 - [Project Code](https://github.com/lialazyoaf/CS612_team_project)
