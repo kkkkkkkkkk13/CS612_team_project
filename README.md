@@ -45,11 +45,48 @@ This guide provides step-by-step instructions to set up and run a web-based syst
 ## **Documentation**
 Instructions for setting up the project locally, including database configuration.
 
+This guide is a general overview For MySQL configuration:
+
+1. **Start MySQL Server**: Open the Terminal and start the MySQL server using the command:
+   ```
+   mysql.server start
+   ```
+
+2. **Access MySQL**: Log in to the MySQL server. The default command is:
+   ```
+   mysql -u root -p
+   ```
+   Enter your password when prompted.
+
+3. **Create Database**: Create a new database for your project. Replace `your_database_name` with the desired name:
+   ```
+   CREATE DATABASE bobaDB;
+   ```
+
+4. **Select Database**: Select the database from the folder:
+   ```
+   USE bobaDB;
+   ```
+
+5. **Import SQL Files**: Import the SQL files (`customer_info.sql`, `menu_info.sql`, etc.) into the database. For each file, use:
+   ```
+   SOURCE path_to_your_file.sql;
+   ```
+   Replace `path_to_your_file.sql` with the actual file path on your system.
+
+6. **Verify Data**: Check if the tables are created and populated with data:
+   ```
+   SHOW TABLES;
+   SELECT * FROM table_name;
+   ```
+   Replace `table_name` with the name of the tables to view their data.
+
+
 ## **Presentation**
 Showcase the system's features, perform a live demo, and explain the integration of frontend, backend, and database.
-[Project Code](https://github.com/lialazyoaf/CS612_team_project)
-[Demo Video]()
-[Slides]())
+- [Project Code](https://github.com/lialazyoaf/CS612_team_project)
+- [Demo Video]()
+- [Slides]())
 ## **Due Date**
 - Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 9**
 - Peer Review Due: **9:00am ET Saturday, December 16**
