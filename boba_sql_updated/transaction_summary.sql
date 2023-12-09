@@ -28,7 +28,7 @@ CREATE TABLE `transaction_summary` (
   `customer_id` int DEFAULT NULL,
   `order_price` decimal(7,2) DEFAULT NULL,
   `store_id` int DEFAULT NULL,
-  `order_sum` varchar(255) DEFAULT NULL,
+  `order_sum` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`transaction_id`),
   KEY `customer_id` (`customer_id`),
   KEY `store_id` (`store_id`),
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-05 19:47:14
+-- Dump completed on 2023-12-09  9:52:53
