@@ -134,7 +134,7 @@ Instructions for setting up the project locally, including database configuratio
 
 5. **Go to Boba-front end part**:
 
-   Click on the "Boba-front end part" link or button to access the front-end of the website weve created.
+   Click on the "Boba-front end part" link or button to access the front-end of the website we've created.
    
 ### **3. Back End Configuration**
 
