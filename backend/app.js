@@ -12,7 +12,7 @@ app.use(cors());
 // MySQL connection configuration
 const db = mysql.createConnection({
     host: '156.127.99.100', // Database server address
-    user: 'along',      // Database username
+    user: 'test',      // Database username
     password: 'abc123',      // Database password
     database: 'BOBA'   // Database name
 });
