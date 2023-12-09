@@ -45,7 +45,7 @@ This guide provides step-by-step instructions to set up and run a web-based syst
 ## **Documentation**
 Instructions for setting up the project locally, including database configuration.
 
-This guide is a general overview For MySQL configuration:
+### **1. MySQL Configuration**
 
 1. **Start MySQL Server**: Open the Terminal and start the MySQL server using the command:
    ```
@@ -80,13 +80,15 @@ This guide is a general overview For MySQL configuration:
    SELECT * FROM table_name;
    ```
    Replace `table_name` with the name of the tables to view their data.
-
+### **2. Front End Configuration**
+1. 
+### **3. Back End Configuration**
 
 ## **Presentation**
 Showcase the system's features, perform a live demo, and explain the integration of frontend, backend, and database.
 - [Project Code](https://github.com/lialazyoaf/CS612_team_project)
 - [Demo Video]()
-- [Slides]())
+- [Slides]()
 ## **Due Date**
 - Website Codes & Databases, Documentation Due: **11:59pm ET Friday, December 9**
 - Peer Review Due: **9:00am ET Saturday, December 16**
