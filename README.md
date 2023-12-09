@@ -80,6 +80,7 @@ Instructions for setting up the project locally, including database configuratio
    SELECT * FROM table_name;
    ```
    Replace `table_name` with the name of the tables to view their data.
+   
 ### **2. Front End Configuration**
 1. **Install http-server (if not already installed)**:
    
@@ -134,6 +135,7 @@ Instructions for setting up the project locally, including database configuratio
 5. **Go to Boba-front end part**:
 
    Click on the "Boba-front end part" link or button to access the front-end of the website weve created.
+   
 ### **3. Back End Configuration**
 
 ## **Presentation**
