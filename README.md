@@ -68,7 +68,7 @@ Instructions for setting up the project locally, including database configuratio
    USE bobaDB;
    ```
 
-5. **Import SQL Files**: Import the SQL files (`customer_info.sql`, `menu_info.sql`, etc.) into the database. For each file, use:
+5. **Import SQL Files**: Import the SQL files (`credit_card.sql`,`order_record.sql`,`transaction_summary`,`customer_info.sql`, `menu_info.sql`, `store_info.sql`) into the database. For each file, use:
    ```
    SOURCE path_to_your_file.sql;
    ```
