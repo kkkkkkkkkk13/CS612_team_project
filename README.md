@@ -174,11 +174,12 @@ Instructions for setting up the project locally, including database configuratio
 
    ```javascript
    const db = mysql.createConnection({
-     host: '156.127.99.100', // Replace with your database server address
-     user: 'test', // Replace with your database username
-     password: 'abc123', // Replace with your database password
-     database: 'BOBA' // Replace with your database name
+   host: 'localhost',      // Typically 'localhost' for a local server
+   user: 'root',           // Your MySQL username
+   password: 'your_password',  // Your MySQL password
+   database: 'bobaDB'      // Your database name from the MySQL configuration
    });
+
    ```
 4. **Start the Server**:
 
