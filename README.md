@@ -47,34 +47,29 @@ Instructions for setting up the project locally, including database configuratio
 
 ### **1. MySQL Configuration**
 
-1. **Start MySQL Server**: Open the Terminal and start the MySQL server using the command:
-   ```
-   mysql.server start
-   ```
-
-2. **Access MySQL**: Log in to the MySQL server. The default command is:
+1.  **Access MySQL**: Log in to the MySQL server. The default command is:
    ```
    mysql -u root -p
    ```
    Enter your password when prompted.
 
-3. **Create Database**: Create a new database for your project. Replace `your_database_name` with the desired name:
+2. **Create Database**: Create a new database for your project. Replace `your_database_name` with the desired name:
    ```
    CREATE DATABASE bobaDB;
    ```
 
-4. **Select Database**: Select the database from the folder:
+3. **Select Database**: Select the database from the folder:
    ```
    USE bobaDB;
    ```
 
-5. **Import SQL Files**: Import the SQL files (`credit_card.sql`,`order_record.sql`,`transaction_summary`,`customer_info.sql`, `menu_info.sql`, `store_info.sql`) into the database. For each file, use:
+4. **Import SQL Files**: Import the SQL files (`credit_card.sql`,`order_record.sql`,`transaction_summary`,`customer_info.sql`, `menu_info.sql`, `store_info.sql`) into the database. For each file, use:
    ```
    SOURCE path_to_your_file.sql;
    ```
    Replace `path_to_your_file.sql` with the actual file path on your system.
 
-6. **Verify Data**: Check if the tables are created and populated with data:
+5. **Verify Data**: Check if the tables are created and populated with data:
    ```
    SHOW TABLES;
    SELECT * FROM table_name;
